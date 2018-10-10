@@ -1,0 +1,146 @@
+<?php 
+$open = new FileOpenClass($filename);
+function tronq($texte){
+	$max_caracteres=19;
+// Test si la longueur du texte dépasse la limite
+	if (strlen($texte)>$max_caracteres){
+// Séléction du maximum de caractères
+		$texte = substr($texte, 0, $max_caracteres);
+// Récupération de la position du dernier espace (afin déviter de tronquer un mot)
+		$position_espace = strrpos($texte, " ");
+		$texte = substr($texte, 0, $position_espace);
+		$texte = $texte."...";
+	}
+
+//on retourne le texte
+	return $texte;
+}
+?>
+
+
+<h1>Application</h1>
+<p>Bienvenue <?= utf8_decode($_SESSION['firstname'])." ".$_SESSION['lastname'] ?></p>
+
+<fieldset>
+	<legend>Menu</legend>
+	<nav class="" role='menu'>
+		<div class="sandwichmenu">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+		<ul>
+        	<li><a href="../controller/newCarrier.php#butCarrierAdd">Ajouter un transporteur</a></li><!--
+     	 --><li><a href="../controller/delCarrier.php#butCarrierDel">Supprimer un transporteur</a></li><!--
+     	--><li><a href="#" class="butUsaveApp">Sauvegarder </a></li><!--
+     --><li><a href="../controller/userSuppress.php" class="butUploadApp">Supprimer un compte</a></li>
+ </ul>
+</nav>
+</fieldset>
+<div id="application">
+	<section>
+		<form action="#" method="POST" accept-charset="utf-8">
+			<fieldset>
+				<legend>Taxe Gazole</legend>
+				<?php 
+				$mycarrier = [];
+				if(@fopen($filename,"r")==true){
+					$mycarrier = $open->fileToArray();
+					if(!empty($mycarrier)){ 
+						echo '<h5>Taxe Gazole associée: </h5><br>';
+						static $count=1;
+						foreach ($mycarrier as $value){
+							echo '<p class="comment"  style="margin-bottom:1%;font-size:0.8em;">'.$count++.'/ <b>Valeur :</b><input type="text" value="'.$value[4].'" class="gazoleInp"> %</p><hr>';
+						}
+					}
+				}
+				?>
+			</fieldset>
+		</form>
+	</section>
+	<section>
+		<fieldset>
+			<legend>Résultat</legend>
+			<?php
+			$mycarrier = [];
+			if(@fopen($filename,"r")==true){
+				$mycarrier = $open->fileToArray();
+				if(!empty($mycarrier)){ 
+					echo '<h5>Liste de vos transporteurs: </h5><br>';
+					foreach ($mycarrier as $value){
+						echo '<p class="comment" style="margin-bottom:2%;font-size:0.8em;" title="'.$value[1].'">Nom :<b>'.tronq($value[1]).'</b>--Type :<b>'.$value[2].'</b> --Fichier associé :<b>'.$value[6].'</b></p><hr>';
+					}
+				}
+			}
+
+			?>
+
+
+		</fieldset>
+	</section>
+	<section id="appselection">
+		<form action="#" method="POST" accept-charset="utf-8">
+			<fieldset>
+				<legend>Selection</legend>
+				<h6>Département</h6>
+				<select name="dep">
+					<option value="0">Département destination</option>
+					<?php for($i=1;$i<96;$i++){
+						echo'<option value="'.$i.'">'.$i.'</option>';
+					}
+					?>
+
+				</select>
+				<hr>
+				<h6>Unité de manutention</h6>
+				<label for="howmany"></label>
+				<select name="colis" id="howmany">
+					<option value="0">Nombre de colis / palette</option>
+					<option value="1" selected>1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="plus">Plus de 5</option>
+				</select>
+				<hr>
+				<h6>Type de colis</h6>
+				<label for="typep"></label>
+				<input type="radio" name="type" id="typep" value="1" checked><i>Palette</i><br>
+				<label for="typec"></label>
+				<input type="radio" name="type" id="typep" value="2"><i>Colis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><br>
+				<hr>
+				<h6>Poids total</h6>
+				<label for="poids"></label>
+				<input type="number" name="poids" id="poids" placeholder="Poids total en Kg">
+				<hr>
+				<h6>Délai livraison</h6>
+				<label for="delai12"></label>
+				<input type="radio" name="delai" id="delai12" value="12"><i>Express 12H</i><br>
+				<label for="delai24"></label>
+				<input type="radio" name="delai" id="delai24" value="24"><i>Rapide 24H&nbsp;&nbsp;</i><br>
+				<label for="delai48"></label>
+				<input type="radio" name="delai" id="delai48" value="48" checked><i>Normal 48H&nbsp;</i>
+			</fieldset>
+			<fieldset>
+				<legend>Interroger</legend>
+				<button type="submit">Chercher</button>
+				<button type="reset">Annuler</button>
+			</fieldset>
+		</form>
+	</section>
+</div>
+<script>
+	$(function(){
+		$('#butconnexion').hide();
+		$('.sandwichmenu + ul').show('300');
+		$('.sandwichmenu').addClass('change');
+		$('.gazoleInp').on("keyup", function(e){
+			var val = $(this).val();
+			var str = val.replace(',','.');
+			$(this).val(str);
+		});
+	});
+</script>
+
+

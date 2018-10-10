@@ -1,0 +1,54 @@
+<H1>Connexion</H1>
+
+<section id="newUser" role="section">
+	<form id="newUserName" action="" method="POST" role="form" accept-charset="utf-8">
+		<fieldset>	
+			<legend>Nouvel utlisateur</legend>
+			<label for = "firstName">Prénom</label>
+			<input type="text" id="firstName" name="firstName"  placeholder="Votre prénom *" required >
+			<p class="error"></p>
+			<label for = "lastName">Nom</label>
+			<input type="text" id="lastName" name="lastName"  placeholder="Votre nom *" required >
+			<p class="error"></p>
+			<label for = "email">Email</label>
+			<input type="email" id="email" name="email"  placeholder="Votre email *" required >
+			<p class="error"></p>
+			<label for = "pass">Mot de passe</label>
+			<input type="password" id="pass" name="pass"  value="" placeholder="Votre mot de passe *" required >
+			<p class="error"></p>
+			<label for = "passConfirm">Confirmation du mot de passe</label>
+			<input type="password" id="passConfirm" name="passConfirm"  placeholder="Confirmez votre mot de passe *" required >
+			<p class="error"></p>
+			<input type="hidden" name="newUser">
+			<strong>* Ces champs sont requis</strong>
+
+		</fieldset>
+		<fieldset>
+			<legend>Envoyer</legend>
+			<button type="submit" id="newUserLog">Enregistrer</button>
+			<button class="reset" type="reset">Annuler</button>
+			<div class="loader"></div>
+		</fieldset>
+	</form>
+</section>
+<section id="loginUser" role="section">
+	<form id="login" action="../controller/application.php#application" method="POST" role="form" accept-charset="utf-8">
+		<fieldset>
+			<legend>Utilisateur déjà enregistré</legend>
+			<label for="logmail" >Email</label>
+			<input type="email" name="email" id="logmail" placeholder="Votre email *" required>
+			<p class="error"></p>
+			<label for="logpass" >Mot de passe</label>
+			<input type="password" name="pass" id="logpass" placeholder="Votre mot de passe *" required>
+			<p class="error"></p>
+			<input type="hidden" name="log">
+			<strong>* Ces champs sont requis</strong>
+		</fieldset>
+		<fieldset>
+			<legend>Envoyer</legend>
+			<button type="submit" id="logUser">Se connecter</button>
+			<button class="reset" type="reset">Annuler</button>
+			<div class="loader"></div>
+		</fieldset>
+	</form>
+</section>

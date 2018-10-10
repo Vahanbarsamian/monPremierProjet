@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name=description content="Calcul du transporteur le moins cher en fonction du poids du delai et du nombre d'unité de manutention">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Calcul transporteur le moins cher</title>
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Cairo|Lora" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="shortcut icon" type="image/x-icon" href="../view/img/7708truck.ico">
+	<link rel="stylesheet" type="text/css" href="../view/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../view/css/style.css">
+</head>
+<body>
+	
+	<header  role="banner">
+		<p><a href="../index.php">Mon calculateur de transporteur le moins cher</a></p>
+		<div>
+			<?php if($template == "index"){include 'controller/dateJour.php';
+		}else{ 
+			include '../controller/dateJour.php';
+		}?>
+		<p><?= @afficheDate(); ?></p>
+	</div>
+
+	<nav class="head" role="menubar">
+		<ul>
+		        <li><a href="../index.php#presentation" <?php  echo ($template == 'index' ? 'class = "onpage"':'');?>><i class="fas fa-home"></i>Accueil</a></li><!--
+		        --><li id="butconnexion"><a href="../controller/connexion.php#newUserName" <?php echo ($template == "connexion" ? 'class = "onpage"':'');?>><i class="fas fa-unlock-alt"></i>Connexion</a></li><!--
+		        	--><li><a href="../controller/contact.php#form"<?php echo ($template == 'contact' ? 'class = "onpage"':'');?>><i class="fas fa-envelope"></i>Contact</a></li><!--
+		        	--><?php echo(isset($_SESSION)? '<li><a href="../controller/deconnexion.php"><i class="fas fa-unlock-alt"></i>Deconnexion</a></li>':""); ?>
+		        </ul>
+		    </nav>
+
+		</header>
+
+		<main class="container" role="main">
+			<?php	if($template=="index"){include 'view/'.$template.'.phtml' ;
+		} else {
+			include '../view/'.$template.'.phtml' ;
+		}?>
+		<!-- '../php/'. -->
+
+
+	</main>
+
+	<footer>
+		<div>
+			<a href="#"><img src="../view/img/truck.png" alt="image du camion de transport"></a>
+			<span aria-describedby="Retour haut de page">Haut de page</span>
+		</div>
+	</footer>
+	<small id="license" title="A propos">&copy Copyright<a rel='license' href="#" role="contentinfo"> Vahan Barsamian </a> - 2018 </small>
+	<script src="../js/main.js"></script>
+</body>
+</html>

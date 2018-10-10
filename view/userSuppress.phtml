@@ -1,0 +1,36 @@
+<h1>Supprimer un compte utlisateur</h1>
+<p>Bienvenue <?= utf8_decode($_SESSION['firstname'])." ".$_SESSION['lastname'] ?></p>
+<section>
+	<a href="../controller/application.php#application" class="butreward" id="butCarrierDel">Retour à l'application</a>
+	<form  id="userSuppress-del" method="POST"  accept-charset="utf-8" role="form">
+		<fieldset>
+			<legend>Suppression d'utilisateur(s)</legend>
+			<ul>
+				<?php 
+				foreach ($mytab as $value) {
+					echo '<li data-checkbox="'.$value['iduser'].'"><input type="checkbox" name="deleteCarrier" data-checkbox="'.$value['iduser'].'" value="'.$value['iduser'].'">'.$value['firstname']." ".$value['lastname'].' et les fichiers associés.<a href="#"><i class="fas fa-trash" id="trash" style="margin-left:1%;" title="Sélectionner pour suppression"></i></a>';
+				}
+
+				?>
+			</ul>
+			<input type="hidden" name="userinpdelCarrier">
+		</fieldset>
+		<fieldset id="userDel-sub">
+			<legend>Supprimer</legend>
+			<button type="submit" id="user-suppressSubmit">Supprimer</button>
+			<button type="reset">Annuler</button>
+			<div class="loader"></div>
+		</fieldset>
+	</form>
+</section>
+<script>
+	$(function(){
+		$("#userDel-sub").hide(300);
+		$('#butconnexion').hide();
+		$('ul').on('change','li[data-checkbox]>input[type=checkbox]',function(e) {
+			if($(this).prop("checked")==true){
+				$("#userDel-sub").fadeIn(300);
+			}
+		});
+	});
+</script>

@@ -1,0 +1,9 @@
+DirectoryIndex index.php
+
+Options +FollowSymlinks
+RewriteEngine on 
+RewriteRule  ^index.html$  /index.php [L]
+RewriteRule  ^connexion.html$  /controller/connexion.php#newUserName [L]
+RewriteRule  ^contact.html$  /controller/contact.php#form [L]
+
+
