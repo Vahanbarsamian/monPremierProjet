@@ -375,6 +375,8 @@
     		$(checkbox[index]).prop("checked",true);
     		$(this).css('color','red');
             $("#carrierDel-sub").fadeIn(300);
+            $("#userDel-sub").fadeIn(300);
+            
         }
     });
 
@@ -527,7 +529,7 @@ $('#userSuppress-del button[type=reset]').click(function(event) {
                         val: sThisVal[0],
                     },
                     success: function(datasixt){
-                        
+
                         if(datasixt.result=="reload"){
                             setTimeout(function() {
                                 window.location.href = "../index.php";
