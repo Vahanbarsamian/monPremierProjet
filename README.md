@@ -14,7 +14,7 @@ Fonctionnement:
 *-Vous vous êtes logué et vous êtes sur l'application. La page est vide...il faut integrer de nouveaux transporteurs en cliquant sur "Ajouter un transporteur" dans le menu supérieur.
 
 *-Vous êtes sur nouveau transporteur : cliquez pour donner un nom a ce transporteur attention ce nom, a valeur d'id il sera unique.Toute tentative d'utilisation de deux noms identiques sur le même compte sera refusé.
-<<<<<<< HEAD
+
 -Cliquez ensuite sur le type de transport : Messagerie, Frêt, Affrètement.
 -Enfin choisissez un fichier à Uploader.Si le fichier n'est pas de type CSV, ou vide, ou déjà existant il sera refusé.Sinon le logiciel vous indiquera que le fichier à bien été uploadé. Le logiciel vous invitera à ajouter alors un nouveau transporteur sinon quittez en cliquant sur le bouton superieur "Retour a l'application".
 
@@ -33,6 +33,6 @@ A noter que si le compte sur lequel vous vous trouvez est également sélectionn
 Attention tous les fichiers uploadés pour les comptes concernés seront également supprimés.
 
 Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle.
-<<<<<<< HEAD
+
 Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre .
 
