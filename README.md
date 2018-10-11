@@ -33,4 +33,6 @@ A noter que si le compte sur lequel vous vous trouvez est également sélectionn
 Attention tous les fichiers uploadés pour les comptes concernés seront également supprimés.
 
 Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle.
+<<<<<<< HEAD
 Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre (en référence à un recruteur qui m'a gentiment indiqué qu'il ne m'en donnerai pas un euro ;) ).
+
