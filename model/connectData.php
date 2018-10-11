@@ -41,7 +41,7 @@
 			`password` VARCHAR(60) NOT NULL,
 			`created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP	
 			)
-			ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;" ;
+			ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci" ;
 			$connexion->prepare($req)->execute();
 			connection($email);
 		}

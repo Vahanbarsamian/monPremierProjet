@@ -3,7 +3,7 @@ function saveData($tab,$id){
 	include'../model/bddConnexion.php';
 	try {
 		$bdd;
-		$req='CREATE TABLE IF NOT EXISTS `myfirstproject`.`mycarrierslist` (
+		$req="CREATE TABLE IF NOT EXISTS $DB_NAME.`mycarrierslist` (
 		`idlist` smallint(6) NOT NULL,
 		`carriername` VARCHAR(50) NULL,
 		`type` VARCHAR(30) NULL,
@@ -16,7 +16,7 @@ function saveData($tab,$id){
 		REFERENCES `user`(iduser)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE)
-		ENGINE = InnoDB;';
+		ENGINE = InnoDB";
 		$exe=$bdd->prepare($req)->execute();
 		$request="DELETE FROM `mycarrierslist` WHERE `idlist`=$id";
 		$act=$bdd->prepare($request)->execute();

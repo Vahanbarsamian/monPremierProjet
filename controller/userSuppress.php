@@ -48,7 +48,7 @@ if(isset($_POST) && !empty($_POST)){
 
 
 
-$template = 'usersuppress';
+$template = 'userSuppress';
 include'../view/layout.phtml';
 exit();
 ?>
