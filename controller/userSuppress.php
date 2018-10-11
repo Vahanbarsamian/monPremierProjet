@@ -22,11 +22,13 @@ if(isset($_POST) && !empty($_POST)){
 	$filename=$_SERVER['DOCUMENT_ROOT'].'/fichiers/Datacarrier/user';
 	foreach ($tabsup as $value) {
 		$dossier = $filename.$value[0];
-		$files = array_diff(scandir($dossier), array('.','..'));
-		foreach ($files as $file) {
-			(is_dir("$dossier/$file")) ? delTree("$dossier/$file") : unlink("$dossier/$file");
+		if(file_exists($dossier)){
+			$files = array_diff(scandir($dossier), array('.','..'));
+			foreach ($files as $file) {
+				(is_dir("$dossier/$file")) ? delTree("$dossier/$file") : unlink("$dossier/$file");
+			}
+			rmdir($dossier);
 		}
-		rmdir($dossier);
 	} 
 	//Si le compte sur lequel on se trouve à été supprimé retour a l'index
 	if($count = $val ){
