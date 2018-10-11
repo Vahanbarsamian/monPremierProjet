@@ -26,7 +26,7 @@
 
 			$pdo = new PDO("$DB_TYPE:host=$DB_HOST", $DB_USER, $DB_PASS);
 
-			$requete = "CREATE DATABASE IF NOT EXISTS `myfirstproject` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
+			$requete = "CREATE DATABASE IF NOT EXISTS $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
 			$pdo->prepare($requete)->execute();
 			$requete = null;
 
