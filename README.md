@@ -53,6 +53,4 @@ Cette application a pour vocation de faire valoir des acquis et n'est pas à ven
   Attention tous les fichiers uploadés pour les comptes concernés seront également supprimés.
   
   Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle.
-  Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre (en référence à un recruteur qui m'a gentiment indiqué qu'il ne m'en donnerai pas un euro ;) ).
-  
->>>>>>> 46c44e1faecf7718b8b50580d084f57f58a94900
+  Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre .
