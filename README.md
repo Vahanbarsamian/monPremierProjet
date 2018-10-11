@@ -1,4 +1,4 @@
-﻿# Mon_premier_projet
+# Mon_premier_projet
 Projet réalisé pour mettre en pratique mes acquis de ma formation RNCP niveau III
 Mise en situation des 5 langages de programmation HTML5, CSS3, javascript, jQuery, PHP, MySQL
 Ce projet a pour vocation de pouvoir comparer et choisir le transporteur le moins cher et le plus approprié dans une liste établie par l'utilisateur qui uploadera les fichiers CSV nécessaires au fonctionnement du logiciel.
@@ -32,7 +32,8 @@ De nouveau un message de confirmation vous invitera a poursuivre ou non.
 A noter que si le compte sur lequel vous vous trouvez est également sélectionné, le logiciel vous basculera sur la page d'accueil.
 Attention tous les fichiers uploadés pour les comptes concernés seront également supprimés.
 
-Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle.
+**
 
-Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre.
+## Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle. Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre.
 
+**
