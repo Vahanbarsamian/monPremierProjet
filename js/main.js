@@ -418,9 +418,9 @@
         var result = false;
         $("li[data-checkbox]>input[type=checkbox]").each(function(e) {
             if($(this).prop("checked")==true){
-               result=true;
-           }
-       });
+             result=true;
+         }
+     });
         if(result==true){
             if(confirm('Vous êtes sur le point d\'effectuer une suppression\nVoulez-vous vraiment poursuivre?')){
                 console
@@ -442,12 +442,12 @@
                                 location.reload();
                             });
                         }else{
-                           $('#del-carrierSubmit').hide();
-                           $("#carrierDel-sub > button[type=reset]").hide();
-                           $("<p class='error' style='display:inline-block'><i class='fas fa-exclamation-triangle' style='color:red;'></i>"+datafour.message+"</p>").insertAfter('#carrierDel-sub button[type = reset]');
-                       }
-                   },
-                   error: function(datafour){
+                         $('#del-carrierSubmit').hide();
+                         $("#carrierDel-sub > button[type=reset]").hide();
+                         $("<p class='error' style='display:inline-block'><i class='fas fa-exclamation-triangle' style='color:red;'></i>"+datafour.message+"</p>").insertAfter('#carrierDel-sub button[type = reset]');
+                     }
+                 },
+                 error: function(datafour){
                     console.log('Error',datafour);
                 }
             });
@@ -516,9 +516,9 @@ $('#userSuppress-del button[type=reset]').click(function(event) {
         var result = false;
         $("li[data-checkbox]>input[type=checkbox]").each(function(e) {
             if($(this).prop("checked")==true){
-               result=true;
-           }
-       });
+             result=true;
+         }
+     });
         if(result==true){
             if(confirm('Vous êtes sur le point d\'effectuer une suppression\nVoulez-vous vraiment poursuivre?')){
                 $.ajax({
@@ -545,12 +545,12 @@ $('#userSuppress-del button[type=reset]').click(function(event) {
                                 location.reload();
                             });
                         }else{
-                           $('#user-suppressSubmit').hide();
-                           $("#userSuppress-del > button[type=reset]").hide();
-                           $("<p class='error' style='display:inline-block'><i class='fas fa-exclamation-triangle' style='color:red;'></i>"+datasixt.message+"</p>").insertAfter('#userSuppress-del button[type = reset]');
-                       }
-                   },
-                   error: function(datasixt){
+                         $('#user-suppressSubmit').hide();
+                         $("#userSuppress-del > button[type=reset]").hide();
+                         $("<p class='error' style='display:inline-block'><i class='fas fa-exclamation-triangle' style='color:red;'></i>"+datasixt.message+"</p>").insertAfter('#userSuppress-del button[type = reset]');
+                     }
+                 },
+                 error: function(datasixt){
                     console.log('Error',datasixt);
                     $('.error').remove();
                     $("<p class='error' style='display:inline-block'><i class='fas fa-exclamation-triangle' style='color:red;'></i>--Une erreur est survenue...Echec de la suppression... </p>").insertAfter('#userSuppress-del button[type = reset]');
