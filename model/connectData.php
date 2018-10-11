@@ -22,6 +22,7 @@
 			}
 			// Création de la base de donnée si inexistante
 		} catch(Exception $e){
+			include'../model/bddConnexion.php';
 			$email=$_POST['email'];
 
 			$pdo = new PDO("$DB_TYPE:host=$DB_HOST", $DB_USER, $DB_PASS);
