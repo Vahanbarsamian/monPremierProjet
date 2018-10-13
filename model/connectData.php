@@ -20,7 +20,7 @@
 				echo json_encode(['result'=>true]);
 				die();
 			}
-			// Création de la base de donnée si inexistante
+			/**Création de la base de donnée si inexistante**/ 
 		} catch(Exception $e){
 			$email=$_POST['email'];
 
@@ -30,7 +30,7 @@
 			$pdo->prepare($requete)->execute();
 			$requete = null;
 
-			// Création de la table user pour cette même table
+			/**Création de la table user pour cette même table**/
 
 			$connexion = new PDO("$DB_TYPE:host=$DB_HOST;dbname=$DB_NAME;charset=utf8", $DB_USER, $DB_PASS);
 			$req = "CREATE TABLE IF NOT EXISTS $DB_NAME.`user` (
