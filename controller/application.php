@@ -1,9 +1,6 @@
 <?php 
 session_start();
-
 include'../class/file.openClass.php'; 
-$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/listeDesTransporteurs.csv';
-
 
 //Si on arrive sur la page via le formulaire de connexion
 
@@ -19,7 +16,10 @@ if(!isset($_SESSION)  || isset($_POST['log'])){
 	}
 	
 	include'../model/loadDataUser.php';
+	$filepath = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$id['iduser'];
+	$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$id['iduser'].'/listeDesTransporteurs.csv';
 	$fileassoc = $_SERVER['DOCUMENT_ROOT'].'/fichiers/Datacarrier/user'.$id['iduser'];
+	if(!file_exists($filepath)) mkdir($filepath,0777,true);
 	if(file_exists($filename)){
 		unlink($filename);
 		$open = new FileOpenClass($filename);
@@ -39,6 +39,7 @@ if(!isset($_SESSION)  || isset($_POST['log'])){
 
 } else if(isset($_SESSION) && !isset($_POST['log'])){
 	if(isset($_SESSION['email'])){ 
+		$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'].'/listeDesTransporteurs.csv';
 		$template='application';
 		include'../view/layout.phtml';
 		exit();

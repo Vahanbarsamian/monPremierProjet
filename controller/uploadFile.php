@@ -8,7 +8,6 @@ if(isset($_SESSION)){
 }
 
 $iduser=ceil($_SESSION['iduser']);
-
 // Adresse du chemin temporaire du fichier
 $filedirectory = $_FILES["file"]["tmp_name"];
 
@@ -34,7 +33,7 @@ if(file_exists($location)){
 	$tab=$_FILES;
 	$tab['result']=false;
 	$tab['fileError'] = "Le fichier à uploader existe déja dans le dossier de reception...Echec de l'upload !...Chosissez un autre fichier merci.";
-	$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/listeDesTransporteurs.csv';
+	$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'].'/listeDesTransporteurs.csv';
 	$open = new FileOpenClass($filename);
 	$mytab = $open->fileToArray();
 	foreach($mytab  as $numero => $arr){ 
@@ -51,7 +50,7 @@ if(file_exists($location)){
 		$tab = $_FILES;
 		$tab['result']=true;
 		$tab['fileError'] = "Le fichier a été uploader avec succès...";
-		$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/listeDesTransporteurs.csv';
+		$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'].'/listeDesTransporteurs.csv';
 		$open = new FileOpenClass($filename);
 		$mytab = $open->fileToArray();
 		$name = $tab['file']['name'];
@@ -66,7 +65,7 @@ if(file_exists($location)){
 	} else {
 		$tab['result']=false;
 		$tab['fileError'] = "Echec de l'upload !...un problème est survenu pendant l'upload...veuillez réessayer merci.";
-		$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/listeDesTransporteurs.csv';
+		$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'].'/listeDesTransporteurs.csv';
 		$open = new FileOpenClass($filename);
 		$mytab = $open->fileToArray();
 		foreach($mytab  as $numero => $arr){ 

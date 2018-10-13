@@ -19,7 +19,12 @@ if(isset($_POST) && !empty($_POST)){
 	$val = destroyData($tabsup);
 
 //Destruction des dossiers associés
-	$filename=$_SERVER['DOCUMENT_ROOT'].'/fichiers/Datacarrier/user';
+	$filepath = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'];
+	$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'].'/listeDesTransporteurs.csv';
+	if(file_exists($filename)){
+		unlink($filename);
+	}
+	rmdir($filepath);
 	foreach ($tabsup as $value) {
 		$dossier = $filename.$value[0];
 		if(file_exists($dossier)){

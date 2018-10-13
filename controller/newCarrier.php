@@ -64,7 +64,7 @@ if (isset($_POST['newCarrier'])){
 
 // Si toutes les conditions sont remplies on upload le fichier csv et on rajoute le transporteur a la liste en cours
 			require'../class/file.openClass.php'; 
-			$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/listeDesTransporteurs.csv';
+			$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'].'/listeDesTransporteurs.csv';
 			$open = new FileOpenClass($filename); 
 			$myarray = $open->fileToArray();
 			$myvalue = $tab['carrierName'];

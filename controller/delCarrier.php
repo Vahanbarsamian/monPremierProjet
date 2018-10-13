@@ -7,7 +7,7 @@ if(isset($_SESSION)){
 	}
 }
 require'../class/file.openClass.php'; 
-$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/listeDesTransporteurs.csv';
+$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'].'/listeDesTransporteurs.csv';
 $open = new FileOpenClass($filename); 
 $collection = $open->fileToArray(); // tableau des éléments affichés
 if(isset($_POST['val'])){
