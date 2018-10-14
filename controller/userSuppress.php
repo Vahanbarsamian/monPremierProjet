@@ -21,12 +21,17 @@ if(isset($_POST) && !empty($_POST)){
 //Destruction des dossiers associés
 	$filepath = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'];
 	$filename = $_SERVER['DOCUMENT_ROOT'].'/fichiers/userLog'.$_SESSION['iduser'].'/listeDesTransporteurs.csv';
+	$fileassoc=$_SERVER['DOCUMENT_ROOT'].'/fichiers/Datacarrier/user';
+
+//Suppression du csv user log
 	if(file_exists($filename)){
 		unlink($filename);
 	}
 	rmdir($filepath);
+
+//Suppression des fichiers user associés
 	foreach ($tabsup as $value) {
-		$dossier = $filename.$value[0];
+		$dossier = $fileassoc.$value[0];
 		if(file_exists($dossier)){
 			$files = array_diff(scandir($dossier), array('.','..'));
 			foreach ($files as $file) {
@@ -35,6 +40,7 @@ if(isset($_POST) && !empty($_POST)){
 			rmdir($dossier);
 		}
 	} 
+
 	//Si le compte sur lequel on se trouve à été supprimé retour a l'index
 	if($count = $val ){
 		$myid = $_SESSION['iduser'];
@@ -42,7 +48,7 @@ if(isset($_POST) && !empty($_POST)){
 			$_SESSION=[];
 			session_destroy();
 			$template='index';
-			echo json_encode(['result'=>'reload','message'=>'--Votre compte à été supprimer...Vous allez être rediriger vers la page d\'accueil']);
+			echo json_encode(['result'=>'reload','message'=>'--Votre compte à été supprimé...Vous allez être rediriger vers la page d\'accueil']);
 			exit();
 		}
 		echo json_encode(['result'=>true,'count'=>$val,'message'=>'--Suppession de compte réussi !!!']);

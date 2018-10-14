@@ -80,11 +80,13 @@ if (isset($_POST['newCarrier'])){
 		}
 		if($tab['result'] == true){ 
 			$newcarrier = array($tab['id'],$tab['carrierName'],$tab['type'],$tab['size'],$tab['gazole'],$tab['date']);
+			$uploadName = basename($tab['file']);
 			$open->saveOneToFile($newcarrier);
+			include'../model/newCarrierDataSave.php';
 		}
 
 	}
-	
+
 	echo json_encode($tab);
 	exit();
 
