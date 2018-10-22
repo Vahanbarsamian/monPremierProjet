@@ -1,4 +1,4 @@
-# Mon_premier_projet
+﻿# Mon_premier_projet
 Projet réalisé pour mettre en pratique mes acquis de ma formation RNCP niveau III
 Mise en situation des 5 langages de programmation HTML5, CSS3, javascript, jQuery, PHP, MySQL
 Ce projet a pour vocation de pouvoir comparer et choisir le transporteur le moins cher et le plus approprié dans une liste établie par l'utilisateur qui uploadera les fichiers CSV nécessaires au fonctionnement du logiciel.
@@ -31,11 +31,7 @@ Des cases à cocher précisant quels comptes doivent être supprimés feront app
 De nouveau un message de confirmation vous invitera a poursuivre ou non.
 A noter que si le compte sur lequel vous vous trouvez est également sélectionné, le logiciel vous basculera sur la page d'accueil.
 Attention tous les fichiers uploadés pour les comptes concernés seront également supprimés.
-
-
-
-[Visualisation du rendu sur]: https://www.vahan.tech	"Mise en situation"
-
+[Visite du site] https://www.vahan.tech   Mise en situation sur un serveur
 **
 
 ## Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle. Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre.
