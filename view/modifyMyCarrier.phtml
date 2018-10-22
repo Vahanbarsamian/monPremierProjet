@@ -1,0 +1,56 @@
+<h1>Modifier Transport : <?= $name ?></h1>
+<a href="../controller/application.php#application" class="butreward" id="butCarrierAdd">Retour à l'application</a>
+<form  id="carrier-modify" action='modifyMyCarrier.php' method="POST" enctype="multipart/form-data" accept-charset="utf-8" role="form">
+	<fieldset>
+		<legend>Modification du transporteur</legend>
+		<label for="modifyCarrierName">Nom du transporteur</label>
+		<input type="text" id="modifyCarrierName" name="nom" placeholder="Nommez votre transporteur ici *" style="background:url('../view/img/truck-solid.svg') no-repeat 7%; background-size: 5%" value = "<?= $name ?>" required >
+		<p class="comment">(Si aucune saisie : "DNC" + date du jour par défaut)</p>
+		<label for="modifyCarrierType">Choix du type de transporteur</label>
+		<select name="type" id="modifyCarrierType" required>
+			<option value="0">- Type de transport * -</option>
+			<option value="1">Messagerie</option>
+			<option value="2">Frêt</option>
+			<option value="3">Affrètement</option>
+		</select>
+		<p class="comment">(Si aucune séléction : "Fret" par défaut)</p>
+		<label for="carrier-data">Fichier actuel</label>
+		<p id="carrier-data" data-carriermodify = <?= $files? $files:"" ?>>Fichier actuellement associé: <?= $files? $files:" aucun..." ?></p><a href="#"><i class="fas fa-trash" id="recycle" title="Supprimer le fichier <?=$files?>"></i></a>
+		<label for="modifyCarrierDataFile">Choix du fichier CSV</label>
+		<input type="file" id="modifyCarrierDataFile" name="file" class="input-file" accept=".csv"  >
+		<input type="hidden" name="modify">
+		<i>Uniquement des fichiers .CSV</i>
+		<p class="error"></p>
+		<p><strong> * Ces champs sont requis</strong></p>
+		<progress value='0' max='100' id='uploadbar'></progress>
+	</fieldset>
+	<fieldset>
+		<legend>Modifier</legend>
+		<button type="submit" id="modifyCarrierSubmit">Modifier</button>
+	</fieldset>
+</form>
+<script>
+	$(function(){
+		switch ("<?=$type?>") {
+			case "Messagerie":
+			$('select').val(1);
+			break;
+			case "Frêt":
+			$('select').val(2);
+			break;
+			case "Affrètement":
+			$('select').val(3);
+			break;
+		}
+		$('#butconnexion').hide();
+		$('.sandwichmenu + ul').show('300');
+		$('.sandwichmenu').addClass('change');
+	});
+	var tab = $('#carrier-data').data('carriermodify');
+	if(tab=="aucun..." || tab==""){
+		$('#recycle').hide();
+	}else{
+		$('#recycle').show();
+	}
+
+</script>

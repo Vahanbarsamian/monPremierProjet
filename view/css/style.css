@@ -38,9 +38,6 @@
  	background-color: #cccccc;
  	color: #666666;
  }
- select {
- 	font-size: 0.8em;
- }
  /******************/
  /**** id & class **/
  /******************/
@@ -97,6 +94,20 @@
  	display: flex;
  	justify-content: space-between;
  }
+ #application > section:nth-child(2) > fieldset > p > a {
+ 	position: relative;
+ 	right: -3%;
+ 	-webkit-transition: 1s ease-in-out 0s;
+ 	-moz-transition: 1s ease-in-out 0s;
+ 	-o-transition: 1s ease-in-out 0s;
+ 	transition: 1s ease-in-out 0s;
+ }
+ #application > section:nth-child(2) > fieldset > p > a:hover>.fa-edit {
+ 	color: blueviolet;
+ 	-ms-transform: scale(1.2);
+ 	-webkit-transform: scale(1.2);
+ 	transform: scale(1.2);
+ }
  #application section {
  	width: 25%;
  }
@@ -106,7 +117,7 @@
  #application p.comment:nth-of-type(even) {
  	background:#f1f2fe;
  }
- #carrier-add{
+ #carrier-add, #carrier-modify{
  	width: 45%;
  	margin: 0 auto;
  }
@@ -176,6 +187,11 @@
  	float: right;
  	margin-top: 1%;
  }
+ #application > section:nth-child(2) > fieldset:nth-child(1) > p{
+ 	font-size: 0.8em;
+ 	padding-bottom: 3px;
+ 	margin-bottom: 1px;
+ }
  .loader {
  	display: none;
  	margin-left: 7%;
@@ -197,6 +213,25 @@
  }
  #appselection input[type=radio]{
  	margin-left: 30%;
+ }
+ #carrier-modify > fieldset:nth-child(1) > p{
+ 	text-align: center;
+ 	margin-left: 5%;
+ 	display: inline-block;
+ 	margin-right: 5%;
+ }
+ a #recycle {
+ 	margin-left: -16%;
+ 	position: relative;
+ 	top: 15px;
+ }
+ a:hover #recycle {
+ 	color: red;
+ }
+ #modifyCarrierSubmit{
+ 	display: block;
+ 	width: 80%;
+ 	margin: 0 auto;
  }
  @-webkit-keyframes spin {
  	0% {
@@ -342,6 +377,8 @@
  	border-bottom: none;
  	margin: 2% 3% 3% 5%;
  	text-align: center;
+ 	font-size: 0.8em;
+ 	width: 37%;
  }
  input[type = "text"] {
  	background: url('../img/user-circle-solid.svg') no-repeat 7%;

@@ -68,7 +68,8 @@ function tronq($texte){
 				if(!empty($mycarrier)){ 
 					echo '<h5>Liste de vos transporteurs: </h5><br>';
 					foreach ($mycarrier as $value){
-						echo '<p class="comment" style="margin-bottom:2%;font-size:0.8em;" title="'.$value[1].'">Nom :<b>'.tronq($value[1]).'</b>--Type :<b>'.$value[2].'</b> --Fichier associé :<b>'.$value[6].'</b></p><hr>';
+						$value[6]? $value[6]:$value[6]="aucun...";
+						echo '<p class="comment"  title="'.$value[1].'">Nom :<b>'.tronq($value[1]).'</b>--Type :<b>'.$value[2].'</b> --Fichier associé :<b>'.$value[6].'</b><a href="../controller/modifyMyCarrier.php?name='.$value[1].'&type='.$value[2].'&files='.$value[6].'" title="Modifier la fiche"><i class="fas fa-edit"></a></i></p><hr>';
 					}
 				}
 			}
