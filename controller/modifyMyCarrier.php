@@ -89,7 +89,7 @@ if($_POST){
 			if(empty($value[4])) $value[4] = 0;
 			insert($value[0],$value[1],$value[2],$value[3],$value[4],$value[5],$value[6]);
 		}
-		echo json_encode(['result'=>'partial','message'=>"Mise à jour effectuée avec success mais le fichier ".$files." n'a pas été modifié<br>Afin de le modifier veuillez effacer le fichier actuel avant d'en associer un nouveau"]);
+		echo json_encode(['result'=>'partial','message'=>"Mise à jour effectuée avec success mais le fichier ".$files." existe déjà et n'a pas été modifié<br>Afin de le modifier veuillez effacer le fichier actuel avant d'en associer un nouveau"]);
 		exit();
 	}
 
