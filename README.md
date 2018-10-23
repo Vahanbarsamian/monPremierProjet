@@ -32,7 +32,16 @@ De nouveau un message de confirmation vous invitera a poursuivre ou non.
 A noter que si le compte sur lequel vous vous trouvez est également sélectionné, le logiciel vous basculera sur la page d'accueil.
 Attention tous les fichiers uploadés pour les comptes concernés seront également supprimés.
 
-[Visite du site] https://vahan.tech/   Mise en situation sur un serveur
+[Vue de mon projet en cours de réalisation](https://vahan.tech/)  Mise en situation sur un serveur
+
+*Quelques maquettes d'integration:
+[Fish](http://fish.vahan.tech) Restauration
+
+[Yoga](http://yoga.vahan.tech) Cours de yoga
+
+[Agence de voyage](http://voyage.vahan.tech) Agence de voyage virtuelle
+
+
 **
 
 ## Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle. Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre.

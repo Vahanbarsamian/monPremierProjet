@@ -251,23 +251,23 @@ $(document).ready(function() {
                         contentType: false,
                         processData: false,
                         success: function(data) {
-                           if (data.result == true) {
-                              $("#carrier-add fieldset:nth-child(1) .error").html("<p class='comment' style='color:blue'><i class='far fa-check-circle'></i> -- Fichier ' " + datathird.pathInfo.basename + " '...uploadé avec succès !!!</p>");
-                              $('#uploadbar').fadeIn();
-                              $('#carrierSubmit').prop("disabled", 'disabled');
-                              $('<button type="button" id="carrierReset" onclick="location.reload(true);">Ajouter</button>').insertAfter("#carrier-add button[type='reset']");
-                              $('#carrier-add button[type="reset"').hide(300);
-                          } else {
-                              console.log('Réponse du deuxieme passage', data.fileError);
-                              $("#carrier-add fieldset:nth-child(1) .error").html("<p class='error'><i class='fas fa-exclamation-triangle' style='color:red'></i> --" + data.fileError + "</p>");
-                              $('#carrierSubmit').prop("disabled", false);
-                          }
-                      },
-                      error: function(data) {
-                       console.log('Erreur', data);
-                       $('#carrierSubmit').prop("disabled", false);
-                   }
-               });
+                         if (data.result == true) {
+                          $("#carrier-add fieldset:nth-child(1) .error").html("<p class='comment' style='color:blue'><i class='far fa-check-circle'></i> -- Fichier ' " + datathird.pathInfo.basename + " '...uploadé avec succès !!!</p>");
+                          $('#uploadbar').fadeIn();
+                          $('#carrierSubmit').prop("disabled", 'disabled');
+                          $('<button type="button" id="carrierReset" onclick="location.reload(true);">Ajouter</button>').insertAfter("#carrier-add button[type='reset']");
+                          $('#carrier-add button[type="reset"').hide(300);
+                      } else {
+                          console.log('Réponse du deuxieme passage', data.fileError);
+                          $("#carrier-add fieldset:nth-child(1) .error").html("<p class='error'><i class='fas fa-exclamation-triangle' style='color:red'></i> --" + data.fileError + "</p>");
+                          $('#carrierSubmit').prop("disabled", false);
+                      }
+                  },
+                  error: function(data) {
+                     console.log('Erreur', data);
+                     $('#carrierSubmit').prop("disabled", false);
+                 }
+             });
 
     					function afficherAvancement(e) {
     						if (e.lengthComputable) {
@@ -289,12 +289,12 @@ $(document).ready(function() {
     			}
     		});
         } catch (err) {
-           error: $("#carrier-add fieldset:nth-child(1) .error").html("<p class='error'><i class='fas fa-exclamation-triangle' style='color:red'></i> --Vous devez imperativement sélectionner un fichier '.csv' pour pouvoir poursuivre</p>");
-           e.preventDefault();
-           $('#carrierDataFile').addClass('pulse');
-           $('#carrierSubmit').prop("disabled", false);
-       }
-   });
+         error: $("#carrier-add fieldset:nth-child(1) .error").html("<p class='error'><i class='fas fa-exclamation-triangle' style='color:red'></i> --Vous devez imperativement sélectionner un fichier '.csv' pour pouvoir poursuivre</p>");
+         e.preventDefault();
+         $('#carrierDataFile').addClass('pulse');
+         $('#carrierSubmit').prop("disabled", false);
+     }
+ });
     /*************************************************
     // Animation du bouton sandwich application.php //
     *************************************************/
@@ -422,36 +422,36 @@ $(document).ready(function() {
     		$(this).css('color', '#000000');
     		gazole.push(value);
     	});
-     $.ajax({
-      url: '../controller/appDataSave.php',
-      type: 'POST',
-      dataType: 'json',
-      data: {
-       val: gazole
-   },
-   success: function(datafive) {
-       console.log('Success!!!', datafive);
-       if (datafive.result == true) {
-        $('<p class="comment" style="display:block;text-align:center"><i class="far fa-check-circle" style="color:blue"></i>--' + datafive.message + '</p>').insertAfter('fieldset:nth-child(3)');
-        $('.container > p:nth-child(4)').delay(5000).queue(function() {
-         $(this).remove();
-     });
-    } else {
-        $('<p class="error" style="display:block;text-align:center"><i class="fas fa-exclamation-triangle" style="color:red"></i>--' + datafive.message + '</p>').insertAfter('fieldset:nth-child(3)');
-        $('.container > p:nth-child(4)').delay(9000).queue(function() {
-         $(this).remove();
-     });
-    }
-},
-error: function(datafive) {
-   console.log('Pas bon!!:', datafive);
-   $('<p class="error" style="display:block;text-align:center"><i class="fas fa-exclamation-triangle" style="color:red"></i>--Echec de l\'enregistrement...Vérifiez votre saise avant de réessayer...</p>').insertAfter('fieldset:nth-child(3)');
-   $('.container > p:nth-child(4)').delay(9000).queue(function() {
-    $(this).remove();
-});
-}
-});
+       $.ajax({
+          url: '../controller/appDataSave.php',
+          type: 'POST',
+          dataType: 'json',
+          data: {
+             val: gazole
+         },
+         success: function(datafive) {
+             console.log('Success!!!', datafive);
+             if (datafive.result == true) {
+                $('<p class="comment" style="display:block;text-align:center"><i class="far fa-check-circle" style="color:blue"></i>--' + datafive.message + '</p>').insertAfter('fieldset:nth-child(3)');
+                $('.container > p:nth-child(4)').delay(5000).queue(function() {
+                   $(this).remove();
+               });
+            } else {
+                $('<p class="error" style="display:block;text-align:center"><i class="fas fa-exclamation-triangle" style="color:red"></i>--' + datafive.message + '</p>').insertAfter('fieldset:nth-child(3)');
+                $('.container > p:nth-child(4)').delay(9000).queue(function() {
+                   $(this).remove();
+               });
+            }
+        },
+        error: function(datafive) {
+         console.log('Pas bon!!:', datafive);
+         $('<p class="error" style="display:block;text-align:center"><i class="fas fa-exclamation-triangle" style="color:red"></i>--Echec de l\'enregistrement...Vérifiez votre saise avant de réessayer...</p>').insertAfter('fieldset:nth-child(3)');
+         $('.container > p:nth-child(4)').delay(9000).queue(function() {
+            $(this).remove();
+        });
+     }
  });
+   });
     /*************************************************
     // Bouton annuler dans suppression compte user  //
     *************************************************/
@@ -577,7 +577,11 @@ error: function(datafive) {
         contentType: false,
         success: function(data) {
             console.log('modif ok',data);
-            var namefile = $('#modifyCarrierDataFile')[0].files[0].name ;
+            if($('#modifyCarrierDataFile')[0].files[0] != undefined){
+                var namefile = $('#modifyCarrierDataFile')[0].files[0].name ;
+            }else{
+                var namefile = $('#carrier-data').data('carriermodify');
+            }
             if(data.result== true){
                 $('#carrier-modify .error').html(data.message);
                 $('#carrier-modify .error').css('color','blue');
