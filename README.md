@@ -32,7 +32,7 @@ De nouveau un message de confirmation vous invitera a poursuivre ou non.
 A noter que si le compte sur lequel vous vous trouvez est également sélectionné, le logiciel vous basculera sur la page d'accueil.
 Attention tous les fichiers uploadés pour les comptes concernés seront également supprimés.
 
-**[Vue de mon projet en cours de réalisation]**(https://vahan.tech/)  Mise en situation sur un serveur
+[Vue de mon projet en cours de réalisation](https://vahan.tech/)  Mise en situation sur un serveur
 
 **
 
