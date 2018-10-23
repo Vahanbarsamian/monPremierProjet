@@ -34,6 +34,12 @@ Attention tous les fichiers uploadés pour les comptes concernés seront égalem
 
 [Vue de mon projet en cours de réalisation](https://vahan.tech/)  Mise en situation sur un serveur
 
+**
+
+## Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle. Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre.
+
+**
+
 *Quelques maquettes d'integration:
 
 [Fish](http://fish.vahan.tech) Restauration
@@ -42,9 +48,3 @@ Attention tous les fichiers uploadés pour les comptes concernés seront égalem
 
 [Agence de voyage](http://voyage.vahan.tech) Agence de voyage virtuelle
 
-
-**
-
-## Pour l'heure, faute de fiches tarifaires éxistantes, je travaille à créer un modèle d'intégration de tarifs. En l'état le logiciel pour la partie comparaison des prix n'est pas fonctionnelle. Cette application a pour vocation de faire valoir des acquis et n'est pas à vendre.
-
-**
