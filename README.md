@@ -35,6 +35,7 @@ Attention tous les fichiers uploadés pour les comptes concernés seront égalem
 [Vue de mon projet en cours de réalisation](https://vahan.tech/)  Mise en situation sur un serveur
 
 *Quelques maquettes d'integration:
+
 [Fish](http://fish.vahan.tech) Restauration
 
 [Yoga](http://yoga.vahan.tech) Cours de yoga
