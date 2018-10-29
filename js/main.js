@@ -563,51 +563,61 @@ $(document).ready(function() {
         $.ajax({
             url: '../controller/modifyMyCarrier.php',
             method: 'POST',
-            xhr: function() {
-                myXhr = $.ajaxSettings.xhr(); // xhr qui traite la barre de progression
-                if (myXhr.upload) { // vérifie si l'upload existe
-                    myXhr.upload.addEventListener('progress', afficherAvancement, false);
+            //Données du formulaire envoyé
+            data: fdata,
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            success: function(data) {
+                console.log('modif ok',data);
+                if($('#modifyCarrierDataFile')[0].files[0] != undefined){
+                    var namefile = $('#modifyCarrierDataFile')[0].files[0].name ;
+                }else{
+                    var namefile = $('#carrier-data').data('carriermodify');
+                }
+                if(data.result== true){
+                    $('#carrier-modify .error').html(data.message);
+                    $('#carrier-modify .error').css('color','blue');
+                    $('#carrier-data').html('Fichier actuellement associé: '+namefile);
+                }else if (data.result == 'partial') {
+                    $('#carrier-modify .error').html(data.message);
+                    $('#carrier-modify .error').css('color','blue');
+                    $('#carrier-data').html('Fichier actuellement associé: '+namefile);
+                }else{
+                    $('#carrier-modify .error').html(data.message);
+                }
+            },
+            error: function(data) {
+                console.log('erreur modif',data);
             }
-            return myXhr;
-        },
-        //Données du formulaire envoyé
-        data: fdata,
-        dataType: 'json',
-        processData: false,
-        contentType: false,
-        success: function(data) {
-            console.log('modif ok',data);
-            if($('#modifyCarrierDataFile')[0].files[0] != undefined){
-                var namefile = $('#modifyCarrierDataFile')[0].files[0].name ;
-            }else{
-                var namefile = $('#carrier-data').data('carriermodify');
-            }
-            if(data.result== true){
-                $('#carrier-modify .error').html(data.message);
-                $('#carrier-modify .error').css('color','blue');
-                $('#carrier-data').html('Fichier actuellement associé: '+namefile);
-            }else if (data.result == 'partial') {
-                $('#carrier-modify .error').html(data.message);
-                $('#carrier-modify .error').css('color','blue');
-                $('#carrier-data').html('Fichier actuellement associé: '+namefile);
-            }else{
-                $('#carrier-modify .error').html(data.message);
-            }
-        },
-        error: function(data) {
-            console.log('erreur modif',data);
-        }
 
 
+        });
     });
-        function afficherAvancement(e) {
-            if (e.lengthComputable) {
-                $('progress').attr({
-                    value: e.loaded,
-                    max: e.total
-                });
-            }
-        }
+    /**********************************************
+    //  Taille colis dans selection application  //
+    *********************************************/
+    $('input[name="type"]:radio').on('change',function(e){ 
+        $('#dimension').toggle('slow');
+        $('.calculPoids').remove();
+        $('#Longueur,#largeur,#hauteur').val("");
     });
+
+    /*********************************************
+    // Calcul de la valeur du pods volumetrique //
+    ********************************************/
+    $('#Longueur,#largeur,#hauteur').on('keyup',function(){
+        $('.calculPoids').remove();
+        if($.isNumeric($('#Longueur').val()) && $.isNumeric($('#largeur').val()) && $.isNumeric($('#hauteur').val())){
+         var number =  parseFloat($('#Longueur').val());
+         number *= parseFloat($('#largeur').val());
+         number *= parseFloat($('#hauteur').val());
+         var result = "Le poids volumetrique pour ce colis est de " +(number / 5000).toFixed(2)+" Kg (transport aérien)";
+         $("<p class='calculPoids'>" + result + "</p>").insertAfter('#dimension');
+     }
+ });
+
+
+
 
 });

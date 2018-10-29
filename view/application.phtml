@@ -110,6 +110,14 @@ function tronq($texte){
 				<input type="radio" name="type" id="typep" value="1" checked><i>Palette</i><br>
 				<label for="typec"></label>
 				<input type="radio" name="type" id="typep" value="2"><i>Colis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><br>
+				<div id='dimension'>
+					<label for="Longueur">Longueur</label>
+					<input type="text" id="Longueur" name="Longueur" placeholder="Longueur en cm">
+					<label for="largeur">largeur</label>
+					<input type="text" id="largeur" name="largeur" placeholder="largeur en cm">
+					<label for="hauteur">hauteur</label>
+					<input type="text" id="hauteur" name="hauteur" placeholder="hauteur en cm">
+				</div>
 				<hr>
 				<h6>Poids total</h6>
 				<label for="poids"></label>
@@ -136,7 +144,7 @@ function tronq($texte){
 		$('#butconnexion').hide();
 		$('.sandwichmenu + ul').show('300');
 		$('.sandwichmenu').addClass('change');
-		$('.gazoleInp').on("keyup", function(e){
+		$('.gazoleInp,#Longueur,#largeur,#hauteur').on("keyup", function(e){
 			var val = $(this).val();
 			var str = val.replace(',','.');
 			$(this).val(str);

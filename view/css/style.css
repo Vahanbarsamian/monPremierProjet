@@ -126,6 +126,9 @@
  #userSuppress-del > fieldset > ul > li:nth-of-type(even) {
  	background:#f1f2fe;
  }
+ #dimension{
+ 	display: none;
+ }
  .message {
  	position: sticky;
  	bottom: 37%;
@@ -430,167 +433,177 @@
  	width: 165px;
  	text-align: center;
  }
- /*********************************/
- /** Input and button animation  **/
- /*********************************/
- @-webkit-keyframes pulse {
- 	0% {
- 		box-shadow:0 0 16px rgba(51, 204, 255, 0.2);
- 	}
- 	50%{
- 		box-shadow:0 0 16px rgba(51, 204, 255, 0.9);
- 	}
- 	100%{
- 		box-shadow: 0 0 16px rgba(51, 204, 255, 0.2);
- 	}
- }
- @keyframes pulse {
- 	0% {
- 		box-shadow:0 0 16px rgba(51, 204, 255, 0.2);
- 	}
- 	50%{
- 		box-shadow:0 0 16px rgba(51, 204, 255, 0.9);
- 	}
- 	100%{
- 		box-shadow: 0 0 16px rgba(51, 204, 255, 0.2);
- 	}
- }
- textarea {
- 	flex: 1 1 auto;
- 	border-color: hsla(173, 70%, 33%, 0.74);
- 	border-radius: 8px;
- 	border-bottom: none;
- 	padding: 4% 0 0 6%;
- 	margin: 2% 0 0 3%;
- 	width: 94%;
- 	justify-content: space-around;
- 	box-sizing: border-box;
- }
- button {
- 	padding: 1% 2% 1% 2%;
- 	border-radius: 7%;
- 	background: hsla(173, 70%, 33%, 0.4);
- 	color: hsla(207, 37%, 33%, 0.92);
- 	margin: 0 1% 0 3%;
- }
- /**************************************/
- /** Bouton sandwich page application **/
- /**************************************/
- .sandwichmenu {
- 	display: inline-block;
- 	margin-top: 1%;
- 	cursor: pointer;
- }
- .bar1, .bar2, .bar3 {
- 	width: 35px;
- 	height: 5px;
- 	background-color: hsla(207, 37%, 33%, 0.92);
- 	margin: 6px 0;
- 	transition: 0.4s;
- }
- .change .bar1 {
- 	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
- 	transform: rotate(-45deg) translate(-9px, 6px);
- }
- .change .bar2 {
- 	opacity: 0;
- }
- .change .bar3 {
- 	-webkit-transform: rotate(45deg) translate(-8px, -8px);
- 	transform: rotate(45deg) translate(-8px, -8px);
- }
- .sandwichmenu + ul {
- 	float: right;
- 	width: 75%;
- 	display: none;
- 	margin-right: 3%;
- }
- .sandwichmenu + ul li {
- 	display: inline-block;
- 	margin-left: 7%;
- } 
- /**********************/
- /****** Footer ********/
- /**********************/
- footer {
- 	text-align: center;
- 	background: url('../img/bg.png') center no-repeat ;
- }
- footer div {
- 	width: 14%;
- 	height: 14%;
- 	margin: 0 auto 10px;
- 	border-radius: 50%;
- 	background: hsla(235, 87%, 85%, 0.2);
- }
- footer div:hover {
- 	background: hsla(235, 87%, 85%, 0.1);
- 	background: url('../img/arrow-blue.png') no-repeat center;
- 	background-size: 200px 150px;
- }
- footer div>span {
- 	display: block;
- }
- footer img{
+ #Longueur,#largeur,#hauteur {
+ 	background: none;
  	width: 48%;
- 	padding: 55px 6px 46px 0px;
- }
- small {
- 	display: block;
- 	margin: 0 auto;
- 	width: 60%;
- 	margin-bottom: 1%;
  	text-align: center;
+ 	padding: 1%;
  }
- small a:hover {
- 	color:#795aaf;
- } 
- /*******************/
- /** Media queries **/
- /*******************/
- @media (max-width: 992px) {
- 	body{
- 		font-size:.9em;
- 	}
- 	input[type = number]:not(.gazoleInp), #appselection input[type = number], select {
- 		width: 70%;
- 	}
- 	input[type = "radio"],input[type = "checkbox"] {
- 		margin: 0 auto;
- 		width: 5%;
- 	}
- 	fieldset {
- 		text-align: center;
- 	}
- 	.butreward{
- 		width: 100%;
- 	}
- 	.fa-trash{
- 		margin-top: 0;
- 	}
- 	#application {
- 		flex-direction: column;
- 	}
- 	#application section,#newUser,#loginUser {
- 		width: 100%;
- 		margin: 0 auto;
- 	}
- 	#carrier-add {
- 		width: 100%;
- 	}
- 	#carrier-del fieldset:nth-child(1) ul li > input[type=checkbox]{
- 		margin: 0 3% 0 2%;
- 	}
- 	header nav ul {
- 		justify-content: center;
- 	}
- 	nav ul li {
- 		margin-bottom: 7%;
- 	}
- 	aside {
- 		width: 100%;
- 	}
- 	header > p {
- 		max-width: 60%;
- 	}
- }
+}
+/*********************************/
+/** Input and button animation  **/
+/*********************************/
+@-webkit-keyframes pulse {
+	0% {
+		box-shadow:0 0 16px rgba(51, 204, 255, 0.2);
+	}
+	50%{
+		box-shadow:0 0 16px rgba(51, 204, 255, 0.9);
+	}
+	100%{
+		box-shadow: 0 0 16px rgba(51, 204, 255, 0.2);
+	}
+}
+@keyframes pulse {
+	0% {
+		box-shadow:0 0 16px rgba(51, 204, 255, 0.2);
+	}
+	50%{
+		box-shadow:0 0 16px rgba(51, 204, 255, 0.9);
+	}
+	100%{
+		box-shadow: 0 0 16px rgba(51, 204, 255, 0.2);
+	}
+}
+textarea {
+	flex: 1 1 auto;
+	border-color: hsla(173, 70%, 33%, 0.74);
+	border-radius: 8px;
+	border-bottom: none;
+	padding: 4% 0 0 6%;
+	margin: 2% 0 0 3%;
+	width: 94%;
+	justify-content: space-around;
+	box-sizing: border-box;
+}
+button {
+	padding: 1% 2% 1% 2%;
+	border-radius: 7%;
+	background: hsla(173, 70%, 33%, 0.4);
+	color: hsla(207, 37%, 33%, 0.92);
+	margin: 0 1% 0 3%;
+}
+/**************************************/
+/** Bouton sandwich page application **/
+/**************************************/
+.sandwichmenu {
+	display: inline-block;
+	margin-top: 1%;
+	cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: hsla(207, 37%, 33%, 0.92);
+	margin: 6px 0;
+	transition: 0.4s;
+}
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2 {
+	opacity: 0;
+}
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+}
+.sandwichmenu + ul {
+	float: right;
+	width: 75%;
+	display: none;
+	margin-right: 3%;
+}
+.sandwichmenu + ul li {
+	display: inline-block;
+	margin-left: 7%;
+} 
+/**********************/
+/****** Footer ********/
+/**********************/
+footer {
+	text-align: center;
+	background: url('../img/bg.png') center no-repeat ;
+}
+footer div {
+	width: 14%;
+	height: 14%;
+	margin: 0 auto 10px;
+	border-radius: 50%;
+	background: hsla(235, 87%, 85%, 0.2);
+}
+footer div:hover {
+	background: hsla(235, 87%, 85%, 0.1);
+	background: url('../img/arrow-blue.png') no-repeat center;
+	background-size: 200px 150px;
+}
+footer div>span {
+	display: block;
+}
+footer img{
+	width: 48%;
+	padding: 55px 6px 46px 0px;
+}
+small {
+	position: relative;
+	bottom: 3%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0px;
+	width: 60%;
+	margin-bottom: 1%;
+	text-align: center;
+}
+small a:hover {
+	color:#795aaf;
+} 
+/*******************/
+/** Media queries **/
+/*******************/
+@media (max-width: 992px) {
+	body{
+		font-size:.9em;
+	}
+	input[type = number]:not(.gazoleInp), #appselection input[type = number], select {
+		width: 70%;
+	}
+	input[type = "radio"],input[type = "checkbox"] {
+		margin: 0 auto;
+		width: 5%;
+	}
+	fieldset {
+		text-align: center;
+	}
+	.butreward{
+		width: 100%;
+	}
+	.fa-trash{
+		margin-top: 0;
+	}
+	#application {
+		flex-direction: column;
+	}
+	#application section,#newUser,#loginUser {
+		width: 100%;
+		margin: 0 auto;
+	}
+	#carrier-add {
+		width: 100%;
+	}
+	#carrier-del fieldset:nth-child(1) ul li > input[type=checkbox]{
+		margin: 0 3% 0 2%;
+	}
+	header nav ul {
+		justify-content: center;
+	}
+	nav ul li {
+		margin-bottom: 7%;
+	}
+	aside {
+		width: 100%;
+	}
+	header > p {
+		max-width: 60%;
+	}
+}
