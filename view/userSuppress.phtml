@@ -1,5 +1,5 @@
 <h1>Supprimer un compte utlisateur</h1>
-<p>Bienvenue <?= utf8_decode($_SESSION['firstname'])." ".$_SESSION['lastname'] ?></p>
+<p>Bienvenue <?= $_SESSION[utf8_decode('firstname')]." ".$_SESSION['lastname'] ?></p>
 <section>
 	<a href="../controller/application.php#application" class="butreward" id="butCarrierDel">Retour à l'application</a>
 	<form  id="userSuppress-del" method="POST"  accept-charset="utf-8" role="form">

@@ -55,7 +55,6 @@ if($_POST){
 	
 	if(!file_exists($pathDirectory) && $files=htmlspecialchars($_FILES['file']['name'])){
 		if($_SESSION['files'] && !$_SESSION['files']='aucun...'){
-			var_dump($_SERVER['DOCUMENT_ROOT'].'/fichiers/Datacarrier/user'.$_SESSION['iduser'].'/'.$_SESSION['files']);
 			unlink($_SERVER['DOCUMENT_ROOT'].'/fichiers/Datacarrier/user'.$_SESSION['iduser'].'/'.$_SESSION['files']);
 		}
 		if (move_uploaded_file($_FILES['file']['tmp_name'], $pathDirectory)) {

@@ -10,7 +10,7 @@
 				echo json_encode(['result'=>false]);
 				die();
 			} else {
-				$firstname = utf8_encode(ucfirst(strtolower($_POST['firstName'])));
+				$firstname = utf8_decode(ucfirst(strtolower($_POST['firstName'])));
 				$lastname = strtoupper($_POST['lastName']);
 				$email = strtolower($_POST['email']);
 				$pass = crypt($_POST['pass'],'$2y$14$wHhBmAgOMZEld9iJtV./aq');

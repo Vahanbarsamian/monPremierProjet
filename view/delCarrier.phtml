@@ -2,12 +2,13 @@
 <a href="../controller/application.php#application" class="butreward" id="butCarrierDel">Retour à l'application</a>
 
 <form  id="carrier-del" method="POST"  accept-charset="utf-8" role="form">
-	<fieldset>
+	<fieldset id="fieldsetSupress">
 		<legend>Suppression de transporteurs</legend>
+		<?php if($collection) echo '<input type="checkbox" name="all" value="" style="width:2%;margin-right:7px;">Tout séléctionner';?>
 		<ul>
 			<?php 
 			foreach ($collection as $value) {
-				echo '<li data-checkbox="'.$value[6].'"><input type="checkbox" name="deleteCarrier" data-checkbox="'.$value[6].'" value="'.$value[1].'">'.$value[1].' et son fichier associé '.$value[6].'<a href="#"><i class="fas fa-trash" id="trash" style="margin-left:1%;" title="Sélectionner pour suppression"></i></a>';
+				echo '<li data-checkbox="'.$value[6].'"><input type="checkbox" name="deleteCarrier" data-checkbox="'.$value[6].'" value="'.$value[1].'">'.$value[1].' et son fichier associé '.$value[6].'<a href="#"><i class="fas fa-trash"  style="margin-left:1%;" title="Sélectionner pour suppression"></i></a>';
 			}
 
 			?>

@@ -19,7 +19,7 @@ function tronq($texte){
 
 
 <h1>Application</h1>
-<p>Bienvenue <?= utf8_decode($_SESSION['firstname'])." ".$_SESSION['lastname'] ?></p>
+<p>Bienvenue <?= $_SESSION[utf8_decode('firstname')]." ".$_SESSION[utf8_decode('lastname')] ?></p>
 
 <fieldset>
 	<legend>Menu</legend>
@@ -38,19 +38,20 @@ function tronq($texte){
 </nav>
 </fieldset>
 <div id="application">
-	<section>
+	<section id='taxegazole'>
 		<form action="#" method="POST" accept-charset="utf-8">
 			<fieldset>
 				<legend>Taxe Gazole</legend>
+
 				<?php 
 				$mycarrier = [];
 				if(@fopen($filename,"r")==true){
 					$mycarrier = $open->fileToArray();
 					if(!empty($mycarrier)){ 
-						echo '<h5>Taxe Gazole associée: </h5><br>';
+						echo '<h5>Taxe Gazole associée  <a title="Infos"><i class="fas fa-info-circle"></i></a> :</h5><br>';
 						static $count=1;
 						foreach ($mycarrier as $value){
-							echo '<p class="comment"  style="margin-bottom:1%;font-size:0.8em;">'.$count++.'/ <b>Valeur :</b><input type="text" value="'.$value[4].'" class="gazoleInp"> %</p><hr>';
+							echo '<p class="comment"  style="margin-bottom:1%;font-size:0.8em;">'.$count++.'/ <b>Valeur :</b><input type="text" value="'.$value[4].'" class="gazoleInp" name="'.$value[1].'"> %</p><hr>';
 						}
 					}
 				}
@@ -69,13 +70,14 @@ function tronq($texte){
 					echo '<h5>Liste de vos transporteurs: </h5><br>';
 					foreach ($mycarrier as $value){
 						$value[6]? $value[6]:$value[6]="aucun...";
-						echo '<p class="comment"  title="'.$value[1].'">Nom :<b>'.tronq($value[1]).'</b>--Type :<b>'.$value[2].'</b> --Fichier associé :<b>'.$value[6].'</b><a href="../controller/modifyMyCarrier.php?name='.$value[1].'&type='.$value[2].'&files='.$value[6].'" title="Modifier la fiche"><i class="fas fa-edit"></a></i></p><hr>';
+						echo '<p class="comment"  title="'.$value[1].'">Nom :<b>'.tronq($value[1]).'</b>--Type :<b>'.$value[2].'</b> --Fichier associé :<b>'.$value[6].'</b><a href="../controller/modifyMyCarrier.php?name='.$value[1].'&type='.$value[2].'&files='.$value[6].'&#modify'.'" title="Modifier la fiche"><i class="fas fa-edit"></a></i></p><hr>';
 					}
 				}
 			}
 
 			?>
-
+			<div class="result">
+			</div>
 
 		</fieldset>
 	</section>

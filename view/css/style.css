@@ -131,7 +131,7 @@
  }
  .message {
  	position: sticky;
- 	bottom: 37%;
+ 	bottom: 30%;
  	background-color: hsla(0, 0%, 0%, 0.49);
  	width: 30%;
  	color: white;
@@ -186,6 +186,9 @@
  #butCarrierDel{
  	width: 100%;
  }
+ #fieldsetSupress > ul{
+ 	margin-left: 7%;
+ }
  .fa-trash{
  	float: right;
  	margin-top: 1%;
@@ -206,6 +209,20 @@
  	height: 20px;
  	-webkit-animation: spin 2s linear infinite;
  	animation: spin 2s linear infinite;
+ }
+ .result span{
+ 	font-weight: bold;
+ 	color: red;
+ }
+ .fa-info-circle{
+ 	font-size: 12px;
+ }
+ .fa-info-circle:hover{
+ 	color: blueviolet;
+ 	-ms-transform: scale(1.5);
+ 	-webkit-transform: scale(1.5);
+ 	transform: scale(1.5);
+ 	cursor: pointer;
  }
  input[type=text].gazoleInp{
  	margin: 0 3%;
@@ -231,10 +248,28 @@
  a:hover #recycle {
  	color: red;
  }
+ #presentation>a{
+ 	padding: 0.5px 4% 1px;
+ 	background-color: #45647e;
+ 	border-radius: 8px;
+ 	color: white;
+ 	position: relative;
+ 	left: 113px;
+ 	top: 20px;
+ }
+ #presentation>a:hover{
+ 	background-color: #1e2a28;
+ 	color: #0df;
+ }
  #modifyCarrierSubmit{
  	display: block;
  	width: 80%;
  	margin: 0 auto;
+ }
+ .modeemploi{
+ 	width: 80%;
+ 	color: #8ba3a7;
+ 	font-weight: lighter;
  }
  @-webkit-keyframes spin {
  	0% {
@@ -572,11 +607,17 @@ small a:hover {
 		margin: 0 auto;
 		width: 5%;
 	}
-	fieldset {
+	fieldset:not(#fieldsetSupress) {
 		text-align: center;
 	}
 	.butreward{
 		width: 100%;
+	}
+	#fieldsetSupress > ul{
+		margin: 0;
+	}
+	#fieldsetSupress > ul > li{
+		margin: 2% 0 3%;
 	}
 	.fa-trash{
 		margin-top: 0;
