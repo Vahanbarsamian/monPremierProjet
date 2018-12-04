@@ -42,5 +42,7 @@ Quelques maquettes d'integration:
 [Yoga](http://yoga.vahan.tech) Cours de yoga
 
 [Agence de voyage](http://voyage.vahan.tech) Agence de voyage virtuelle
+
 [Bootstrap](http://bootstrap.vahan.tech) Mise en situation une page web test
+
 [Portfolio bootstrap](http://portfolio.vahan.tech)Portfolio en bootstrap
