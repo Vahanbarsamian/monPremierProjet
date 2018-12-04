@@ -1,15 +1,15 @@
-<h2>Mode d'emploi</h2>
-<nav>
+<h2 id="start">Mode d'emploi</h2>
+<nav class='navbar-modeemploi'>
 	<ul>
-		<li><a href="#demarrer">Pour demarrer</a></li>
-		<li><a href="#application">L'application</a></li>
-		<li><a href="#ajout">Ajouter des fichiers</a></li>
-		<li><a href="#supprimer">Supprimer des fichiers</a></li>
-		<li><a href="#userDelete">Supprimer un compte</a></li>
-	</ul>
+		<li class="sous-menu"><a href="#demarrer">Pour demarrer</a></li><!--
+		--><li class="sous-menu"><a href="#application">L'application</a></li><!--
+		--><li class="sous-menu"><a href="#ajout">Ajouter des fichiers</a></li><!--
+		--><li class="sous-menu"><a href="#supprimer">Supprimer des fichiers</a></li><!--
+	--><li class="sous-menu"><a href="#userDelete">Supprimer un compte</a></li>
+</ul>
 </nav>
-<br>
-<hr class="modeemploi"  id="demarrer">
+<br id="demarrer">
+<hr class="modeemploi">
 <br>
 <section>
 	<h3>Demarrer avec ce logiciel</h3>
@@ -18,16 +18,15 @@
 	<p>- * Pour l'exemple des fichiers CSV sont mis à disposition en Messagerie, Frêt, ou Affrêtement pour tester le logiciel sur le dapartement 1. <b><b>Ces données sont fictives</b> et ils vous appartient de compléter ces données avec vos tarifs, et d'utiliser ces fiches comme modèle pour de futurs enregistrements.</b><br>Il est important de faire concorder les fiches CSV avec le type de transport concerné.<br>Ainsi la fiche Messagerie devra être importée avec le type messagerie etc...sans quoi, les résultats obtenus risquent d'être incohérents.</p>
 	<p>- * Enfin vous pourrez après avoir renseigné les filtres de sélections, lancer la recherche qui s'affichera dans le bas de la "page application". Le ou les résultats concordants triés par ordre de prix seront affichés.</p>
 	<p>- * Vous pourrez bien entendu modifier le type du transport des fichiers associés ou le nom des fichiers eux mêmes après l'import des fichiers.Vous trouverez à cet effet un petit symbole qui vous permettra d'accéder à cette page.</p>
-	<p>- * La suppression d'un transporteur est également possible via le menu supérieur de l'application et en selectionnant "Supprimer un enregistrement". Bien noter que la suppression d'un transporteur supprime aussi ses fichiers joints... pas sa
-	modification en revanche ou là les fichiers sont conservés.</p>
+	<p>- * La suppression d'un transporteur est également possible via le menu supérieur de l'application et en selectionnant "Supprimer un enregistrement". Bien noter que la suppression d'un transporteur supprime aussi ses fichiers joints... pas sa modification en revanche ou là les fichiers sont conservés.</p>
 	<p>- * Pour terminer, vous pourrez supprimer un compte y compris si ce n'est pas le vôtre, car ce logiciel n'est qu'un exercice de présentation des acquis, et le modèle "administration" n'a pas été développé.</p>
 </section>
-<br>
-<hr class="modeemploi"  id="application">
+<br id="application">
+<hr class="modeemploi">
 <br>
 <section>
 	<h3>L'application</h3>
-	<p>- * Pour se rendre à l'application elle même il faut se rendre à la page connexion:<br></p>
+	<p>- * Pour se rendre à l'application elle même il faut se rendre à la page connexion:</p>
 	<ul>
 		<li><b><u>Vous êtes nouvel utilisateur :</u></b></li>
 		<p>&nbsp; Vous êtes appelé à renseigner les champs d'inscription pour créer un compte</p>
@@ -41,8 +40,8 @@
 	<p>- * Une fois terminé revenez a l'application par le biais du bouton retour en haut de page, vous pouvez commencer a travailler.</p>
 	<p>- * Vous devriez voir apparaître tous vos transporteurs en haut de page... les résultats quant à eux apparaîtrons en bas de page dans l'onglet résultat.</p>
 </section>
-<br>
-<hr class="modeemploi"  id="ajout">
+<br id="ajout">
+<hr class="modeemploi">
 <br>
 <section>
 	<h3>L'ajout de fichiers</h3>
@@ -55,8 +54,8 @@
 	<p>&nbsp; <b>L'Affrêtement :</b> qui définit un transport souvent par camion, estimé à 72H de délai de livraison et pour <b>un poids maxi souvent estimé à plus de 500 kg / palette ou à plus de 5 palettes pour un même client a livrer.</b><br>Suivant les prestataires ce délai de livraison peut être ramené a 48H auquel cas il vous faudra importer le tarif classique et le tarif express en nommant différemment chacunes des deux fiches tarifaires comme pour le Frêt.</p>
 	<p>Enfin pour terminer la procédure il faudra bien entendu choisir le fichier à importer et qui est fourni dans le pack  joint à cette application mais qu'avec un seul enregistrement : le département :1.<br>A vous de compléter ces modèles d'importations pour les remplir à votre convenance.</p>
 </section>
-<br>
-<hr class="modeemploi"  id="supprimer">
+<br id="supprimer">
+<hr class="modeemploi">
 <br>
 <section>
 	<h3>Suppression de fiches tarifaires</h3>
@@ -65,10 +64,12 @@
 	<p>- * Dès qu'une séléction est effectuée, un bouton "suppression" permet la suppression du ou des fichiers choisis après confirmation du message d'alerte.</p>
 	<p>- *La suppression des fichiers entraîne la suppression des importations faites précédemment, si des modifications sont à apporter, il faut préférer la modification qui permet de changer le nom, le type ou le fichier associé au nom, mais qui conserve les fichiers déjà en place.</p>
 </section>
-<br>
-<hr class="modeemploi"  id="userDelete">
+<br id="userDelete">
+<hr class="modeemploi">
 <br>
 <section>
 	<h3>Suppression d'un compte utilisateur</h3>
-	p>{- * La suppression d'un compte utilisateur se fait par l'onglet du menu "Supprimer un compte"}
+	<p>	- * La suppression d'un compte utilisateur se fait par l'onglet du menu "Supprimer un compte"</p>
+	<p>- * Cette suppression de compte implique la destruction des dossiers de stockage ainsi que les données dans la base de données.<br>Vous ne pourrez donc plus acceder à la page application tant que vous n'aurez pas recréé un nouveau compte en vous rendant sur la page de connexion.</p>
+	<p>- * Attention toutefois, si vous êtes connecté sur le compte que vous supprimez, vous serez naturellement redirigé sur la page d'accueil.</p>
 </section>

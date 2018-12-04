@@ -271,6 +271,23 @@
  	color: #8ba3a7;
  	font-weight: lighter;
  }
+ .navbar-modeemploi{
+ 	text-align: center;
+ 	position: sticky;
+ 	top: 0;
+ 	background:hsla(207, 29%, 28%, 0.79);
+ 	border-radius: 8px;
+ }
+ .navbar-modeemploi li{
+ 	display: inline-block;
+ 	padding: 2% 2%;
+ }
+ .navbar-modeemploi li a{
+ 	color: white;
+ }
+ .navbar-modeemploi li a:hover{
+ 	color: #0df;
+ }
  @-webkit-keyframes spin {
  	0% {
  		-webkit-transform: rotate(0deg);
