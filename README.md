@@ -45,4 +45,4 @@ Quelques maquettes d'integration:
 
 [Bootstrap](http://bootstrap.vahan.tech) Mise en situation une page web test
 
-[Portfolio bootstrap](http://portfolio.vahan.tech)Portfolio en bootstrap
+[Portfolio bootstrap](http://portfolio.vahan.tech) Portfolio en bootstrap
