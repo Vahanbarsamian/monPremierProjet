@@ -364,12 +364,12 @@ $(document).ready(function() {
             $('#carrier-del > fieldset:nth-child(1) > ul > li > input[type=checkbox]').prop("checked","checked");
             $('#carrier-del > fieldset:nth-child(1) > ul > li > input[type=checkbox]').each(function() {
                 if ((this).checked) {
-                   key.push($(this).val());
-                   key.push($(this).data('checkbox'));
-               }
-               value.push(key);
-               key = [];
-           });
+                 key.push($(this).val());
+                 key.push($(this).data('checkbox'));
+             }
+             value.push(key);
+             key = [];
+         });
             sThisVal.push(value);
             result = true;
             $("#carrierDel-sub").fadeIn(300);
@@ -389,53 +389,53 @@ $(document).ready(function() {
     	var sThisVal = [];
         $('input:checkbox').each(function() {
             if ((this).checked) {
-               key.push($(this).val());
-               key.push($(this).data('checkbox'));
-           }
-           value.push(key);
-           key = [];
-       });
+             key.push($(this).val());
+             key.push($(this).data('checkbox'));
+         }
+         value.push(key);
+         key = [];
+     });
         sThisVal.push(value);
         var result = false;
         $("li[data-checkbox]>input[type=checkbox]").each(function(e) {
           if ($(this).prop("checked") == true) {
-           result = true;
-       }
-   });
+             result = true;
+         }
+     });
         // Phase de suppression
         if (result == true) {
           if (confirm('Vous êtes sur le point d\'effectuer une suppression\nVoulez-vous vraiment poursuivre?')) {
-           console
-           $.ajax({
-            url: '../controller/delCarrier.php',
-            type: 'POST',
-            dataType: 'json',
-            data: {
-             val: sThisVal
-         },
-         success: function(datafour) {
-             if (datafour.result == true) {
-              $('#del-carrierSubmit').hide()
-              $("#carrierDel-sub > button[type=reset]").hide();
-              $("<p class='comment' style='color:blue;display:inline-block;'><i class='far fa-check-circle'></i>" + datafour.message + "</p>").insertAfter('#carrierDel-sub button[type = reset]');
-              $('<button type=button  id="actualiser">Recharger cette page</button>').insertAfter('.comment');
-              $('#actualiser').on('click', function() {
-               $('#carrierDel-sub .loader').css('display', 'inline-block').fadeIn('slow');
-               location.reload();
-           });
-          } else {
-              $('#del-carrierSubmit').hide();
-              $("#carrierDel-sub > button[type=reset]").hide();
-              $("<p class='error' style='display:inline-block'><i class='fas fa-exclamation-triangle' style='color:red;'></i>" + datafour.message + "</p>").insertAfter('#carrierDel-sub button[type = reset]');
-          }
-      },
-      error: function(datafour) {
-         console.log('Error', datafour);
+             console
+             $.ajax({
+                url: '../controller/delCarrier.php',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                   val: sThisVal
+               },
+               success: function(datafour) {
+                   if (datafour.result == true) {
+                      $('#del-carrierSubmit').hide()
+                      $("#carrierDel-sub > button[type=reset]").hide();
+                      $("<p class='comment' style='color:blue;display:inline-block;'><i class='far fa-check-circle'></i>" + datafour.message + "</p>").insertAfter('#carrierDel-sub button[type = reset]');
+                      $('<button type=button  id="actualiser">Recharger cette page</button>').insertAfter('.comment');
+                      $('#actualiser').on('click', function() {
+                         $('#carrierDel-sub .loader').css('display', 'inline-block').fadeIn('slow');
+                         location.reload();
+                     });
+                  } else {
+                      $('#del-carrierSubmit').hide();
+                      $("#carrierDel-sub > button[type=reset]").hide();
+                      $("<p class='error' style='display:inline-block'><i class='fas fa-exclamation-triangle' style='color:red;'></i>" + datafour.message + "</p>").insertAfter('#carrierDel-sub button[type = reset]');
+                  }
+              },
+              error: function(datafour) {
+               console.log('Error', datafour);
+           }
+       });
+         }
      }
  });
-       }
-   }
-});
     /****************************************************
     //  Sauvegarde des données dans l'application      //
     ***************************************************/
@@ -444,43 +444,43 @@ $(document).ready(function() {
         var gazole = [];
         $('.gazoleInp').each(function() {
           if (!$.isNumeric($(this).val()) && !$(this).val()=='') {
-           $(this).css('color', 'red');
-           alert('Valeur non numeric');
-           return false;
-       }
-       var value = $(this).val();
-       $(this).css('color', '#000000');
-       gazole.push(value);
-   });
+             $(this).css('color', 'red');
+             alert('Valeur non numeric');
+             return false;
+         }
+         var value = $(this).val();
+         $(this).css('color', '#000000');
+         gazole.push(value);
+     });
         $.ajax({
           url: '../controller/appDataSave.php',
           type: 'POST',
           dataType: 'json',
           data: {
-           val: gazole
-       },
-       success: function(datafive) {
-           console.log('Success!!!', datafive);
-           if (datafive.result == true) {
-            $('<p class="comment" style="display:block;text-align:center"><i class="far fa-check-circle" style="color:blue"></i>--' + datafive.message + '</p>').insertAfter('fieldset:nth-child(3)');
-            $('.container > p:nth-child(4)').delay(5000).queue(function() {
-             $(this).remove();
-         });
-        } else {
-            $('<p class="error" style="display:block;text-align:center"><i class="fas fa-exclamation-triangle" style="color:red"></i>--' + datafive.message + '</p>').insertAfter('fieldset:nth-child(3)');
-            $('.container > p:nth-child(4)').delay(9000).queue(function() {
-             $(this).remove();
-         });
-        }
-    },
-    error: function(datafive) {
-       console.log('Pas bon!!:', datafive);
-       $('<p class="error" style="display:block;text-align:center"><i class="fas fa-exclamation-triangle" style="color:red"></i>--Echec de l\'enregistrement...Vérifiez votre saise avant de réessayer...</p>').insertAfter('fieldset:nth-child(3)');
-       $('.container > p:nth-child(4)').delay(9000).queue(function() {
-        $(this).remove();
-    });
-   }
-});
+             val: gazole
+         },
+         success: function(datafive) {
+             console.log('Success!!!', datafive);
+             if (datafive.result == true) {
+                $('<p class="comment" style="display:block;text-align:center"><i class="far fa-check-circle" style="color:blue"></i>--' + datafive.message + '</p>').insertAfter('fieldset:nth-child(3)');
+                $('.container > p:nth-child(4)').delay(5000).queue(function() {
+                   $(this).remove();
+               });
+            } else {
+                $('<p class="error" style="display:block;text-align:center"><i class="fas fa-exclamation-triangle" style="color:red"></i>--' + datafive.message + '</p>').insertAfter('fieldset:nth-child(3)');
+                $('.container > p:nth-child(4)').delay(9000).queue(function() {
+                   $(this).remove();
+               });
+            }
+        },
+        error: function(datafive) {
+         console.log('Pas bon!!:', datafive);
+         $('<p class="error" style="display:block;text-align:center"><i class="fas fa-exclamation-triangle" style="color:red"></i>--Echec de l\'enregistrement...Vérifiez votre saise avant de réessayer...</p>').insertAfter('fieldset:nth-child(3)');
+         $('.container > p:nth-child(4)').delay(9000).queue(function() {
+            $(this).remove();
+        });
+     }
+ });
     });
     /*************************************************
     // Bouton annuler dans suppression compte user  //
@@ -673,11 +673,11 @@ $(document).ready(function() {
                 }
             },
             error:function(find){
-             console.log("Pas bon",find);
-             $('.result').html("<p style='color:white;text-align:center;padding:5px'>Une erreur est survenue...sûrement un problème d'integrité de vos fichiers<br>Ou pas de données pour vos recherches<br>Veuillez vous rapprocher de votre administrateur réseau. Merci</p>");
-             $('.result').css({"background":"red","color":"white","margin-top":"5%"});
-         }
-     });
+               console.log("Pas bon",find);
+               $('.result').html("<p style='color:white;text-align:center;padding:5px'>Une erreur est survenue...sûrement un problème d'integrité de vos fichiers<br>Ou pas de données pour vos recherches<br>Veuillez vous rapprocher de votre administrateur réseau. Merci</p>");
+               $('.result').css({"background":"red","color":"white","margin-top":"5%","text-align":"center"});
+           }
+       });
 
     });
     $('#appselection > form> fieldset:nth-child(2) > button[type=reset]').click(function(e){
