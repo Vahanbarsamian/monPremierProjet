@@ -74,7 +74,7 @@
  	font-size: .9em;
  	margin: 0 0 5% 7%;
  	align-content: flex-start;
- 	display: flex;
+ 	
  }
  .error {
  	color: red;
